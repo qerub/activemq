@@ -426,6 +426,10 @@ public class TcpTransport extends TransportThreadSupport implements Transport, S
             IllegalArgumentException {
         if (socketOptions != null) {
             IntrospectionSupport.setProperties(socket, socketOptions);
+            
+            if (!socketOptions.isEmpty()) {
+                throw new IllegalArgumentException("Invalid socket parameters: " + socketOptions);
+            }
         }
 
         try {

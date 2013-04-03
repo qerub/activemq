@@ -59,6 +59,11 @@ public class SslTransportFactory extends TcpTransportFactory {
             server.setWireFormatFactory(createWireFormatFactory(options));
             IntrospectionSupport.setProperties(server, options);
             Map<String, Object> transportOptions = IntrospectionSupport.extractProperties(options, "transport.");
+
+            if (!options.isEmpty()) {
+                throw new IllegalArgumentException("Invalid connector parameters: " + options);
+            }
+
             server.setTransportOption(transportOptions);
             server.bind();
 
