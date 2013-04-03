@@ -178,7 +178,8 @@ public final class IntrospectionSupport {
                 setter.invoke(target, convert(value, setter.getParameterTypes()[0]));
             }
             return true;
-        } catch (Exception ignore) {
+        } catch (Exception e) {
+            LOG.error(String.format("Could not set property %s on %s", name, target), e);
             return false;
         }
     }
