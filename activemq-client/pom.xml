@@ -22,10 +22,11 @@
   <parent>
     <groupId>org.apache.activemq</groupId>
     <artifactId>activemq-parent</artifactId>
-    <version>5.8.0</version>
+    <version>5.8.0+digifort</version>
   </parent>
 
   <artifactId>activemq-client</artifactId>
+  <version>5.8.0+digifort</version>
   <packaging>jar</packaging>
   <name>ActiveMQ :: Client</name>
   <description>The ActiveMQ Client implementation</description>
