@@ -556,7 +556,6 @@ public class BTreeIndexTest extends IndexTestSupport {
      * Overriding so that this generates keys that are the worst case for the BTree. Keys that
      * always insert to the end of the BTree.
      */
-    @Override
     protected String key(int i) {
         return "key:"+nf.format(i);
     }
