@@ -1251,8 +1251,8 @@
           <target>${target-version}</target>
           <optimize>true</optimize>
           <debug>true</debug>
-          <showDeprecation>true</showDeprecation>
-          <showWarnings>true</showWarnings>
+          <!-- <showDeprecation>true</showDeprecation> -->
+          <!-- <showWarnings>true</showWarnings> -->
         </configuration>
       </plugin>
 
