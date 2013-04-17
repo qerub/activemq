@@ -138,6 +138,8 @@ public final class IntrospectionSupport {
 
     public static boolean setProperties(Object target, Map props) {
         boolean rc = false;
+        
+        System.out.println(String.format("=> %s %s %s", target.getClass(), target, props));
 
         if (target == null) {
             throw new IllegalArgumentException("target was null.");
@@ -153,11 +155,15 @@ public final class IntrospectionSupport {
                 rc = true;
             }
         }
+        
+        System.out.println(String.format("<= %s %s %s", target.getClass(), target, props));
 
         return rc;
     }
 
     public static boolean setProperty(Object target, String name, Object value) {
+    	System.err.println("teim0waiR1eeBu7teet0phephai7xau8");
+    	
         try {
             Class<?> clazz = target.getClass();
             if (target instanceof SSLServerSocket) {
@@ -179,6 +185,7 @@ public final class IntrospectionSupport {
             }
             return true;
         } catch (Exception e) {
+            System.err.println("eiGh9chaexaG0zohshoohahvootieBoo");
             LOG.error(String.format("Could not set property %s on %s", name, target), e);
             return false;
         }
