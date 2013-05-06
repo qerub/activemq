@@ -85,7 +85,7 @@ public final class IntrospectionSupport {
                     props.put(optionPrefix + name, strValue);
                     rc = true;
 
-                } catch (Throwable ignore) {
+                } catch (Exception ignore) {
                 }
             }
         }
@@ -178,7 +178,7 @@ public final class IntrospectionSupport {
                 setter.invoke(target, convert(value, setter.getParameterTypes()[0]));
             }
             return true;
-        } catch (Throwable ignore) {
+        } catch (Exception ignore) {
             return false;
         }
     }
@@ -345,11 +345,11 @@ public final class IntrospectionSupport {
                 if (o != null && o.getClass().isArray()) {
                     try {
                         o = Arrays.asList((Object[])o);
-                    } catch (Throwable e) {
+                    } catch (Exception e) {
                     }
                 }
                 map.put(field.getName(), o);
-            } catch (Throwable e) {
+            } catch (Exception e) {
                 LOG.debug("Error getting field " + field + " on class " + startClass + ". This exception is ignored.", e);
             }
         }
